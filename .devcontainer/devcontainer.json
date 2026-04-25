@@ -1,0 +1,21 @@
+{
+  "name": "Ubuntu CLI",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "postStartCommand": "bash .devcontainer/postStart.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "ubuntu-container",
+        "terminal.integrated.profiles.linux": {
+          "ubuntu-container": {
+            "path": "docker",
+            "args": ["exec", "-it", "ubuntu_cli", "bash"]
+          }
+        }
+      }
+    }
+  }
+}
